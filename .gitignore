@@ -29,6 +29,8 @@ output.json
 .externalNativeBuild
 .cxx
 local.properties
+gradlew
+gradlew.bat
 
 
 # IntelliJ
