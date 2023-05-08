@@ -1,8 +1,10 @@
-package com.skyworth.adcommonutils;
+package com.skyworth.adcommonutils.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.skyworth.adcommonutils.R;
 
 public class MainActivity extends AppCompatActivity {
 
