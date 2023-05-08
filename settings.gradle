@@ -1,0 +1,4 @@
+rootProject.name = "ADCommonUtils"
+include ':app'
+include ':BaseLibrary'
+include ':PhotoLibrary'
