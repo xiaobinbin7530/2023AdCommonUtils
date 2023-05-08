@@ -1,10 +1,3 @@
-if (isPhotoLibRunAsModule.toBoolean()) {
-    //作为独立App应用运行
-    apply plugin: 'com.android.application'
-} else {
-    //作为组件运行
-    apply plugin: 'com.android.library'
-}
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
@@ -29,24 +22,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-    sourceSets {
-        main{
-            //jni库统一放在libs目录下
-//            jniLibs.srcDir = ['libs']
-            if (isPhotoLibRunAsModule.toBoolean()){
-                //单独运行
-                manifest.srcFile 'src/main/alone/AndroidManifest.xml'
-            }
-            else {
-                //合并到宿主中
-                manifest.srcFile 'src/main/AndroidManifest.xml'
-//                resources{
-//                    //正式版本时.剔除debug文件夹下的所有调式文件
-//                    exclude 'src/debug/*'
-//                }
-            }
         }
     }
 //    //开启dataBinding

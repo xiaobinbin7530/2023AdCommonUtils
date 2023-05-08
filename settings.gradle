@@ -2,3 +2,4 @@ rootProject.name = "2023ADCommonUtils"
 include ':app'
 include ':BaseLibrary'
 include ':PhotoLibrary'
+include ':VideoLibrary'

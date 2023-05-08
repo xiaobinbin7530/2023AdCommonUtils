@@ -1,4 +1,4 @@
-if (isPhotoLibRunAsModule.toBoolean()) {
+if (isVideoLibRunAsModule.toBoolean()) {
     //作为独立App应用运行
     apply plugin: 'com.android.application'
 } else {
@@ -8,17 +8,18 @@ if (isPhotoLibRunAsModule.toBoolean()) {
 apply from: "../module.build.gradle"
 android {
     defaultConfig {
-        if (isPhotoLibRunAsModule.toBoolean()){
-            applicationId "com.skyworth.photolibrary"
+        if (isVideoLibRunAsModule.toBoolean()){
+            applicationId "com.skyworth.videolibrary"
         }
         //统一资源前缀，规范资源引用
-        resourcePrefix "photo_"
+        resourcePrefix "video_"
     }
+
     sourceSets {
         main{
             //jni库统一放在libs目录下
 //            jniLibs.srcDir = ['libs']
-            if (isPhotoLibRunAsModule.toBoolean()){
+            if (isVideoLibRunAsModule.toBoolean()){
                 //单独运行
                 manifest.srcFile 'src/main/alone/AndroidManifest.xml'
             }

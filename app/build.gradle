@@ -37,5 +37,5 @@ android {
 
 dependencies {
     api project(path: ':PhotoLibrary')
-//    api project(path: ':VideoLibrary')
+    api project(path: ':VideoLibrary')
 }
