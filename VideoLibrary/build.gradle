@@ -13,6 +13,14 @@ android {
         }
         //统一资源前缀，规范资源引用
         resourcePrefix "video_"
+        //ARouter配置
+        javaCompileOptions {
+            // 显式声明支持注解
+            annotationProcessorOptions {
+                includeCompileClasspath true
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     sourceSets {
@@ -38,4 +46,7 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     api project(path: ':BaseLibrary')
+    //Arouter
+//    api rootProject.ext.dependencies["arouter-api"]
+    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
 }

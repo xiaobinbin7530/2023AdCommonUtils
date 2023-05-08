@@ -2,6 +2,8 @@ package com.skyworth.baselibrary;
 
 import android.app.Application;
 import android.content.Context;
+
+import com.alibaba.android.arouter.launcher.ARouter;
 //import android.text.TextUtils;
 //
 //import com.alibaba.android.arouter.launcher.ARouter;
@@ -60,6 +62,12 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
+        //路由 跳转
+        if (BuildConfig.DEBUG) {
+            ARouter.openLog();
+            ARouter.openDebug();
+        }
+        ARouter.init(instance);
 //        mACache = ACache.get(this);
 ////未同意协议前  不初始化
 //        String isFirstShowPolicy = BaseApplication.getACache().getAsString(StaticConstant.ACacheTag.IS_FIRST_SHOW_POLICY);

@@ -4,6 +4,8 @@
 
     <application android:name="com.skyworth.baselibrary.BaseApplication"
         >
+        <activity android:name=".ui.PhotoActivity"></activity>
     </application>
+
 
 </manifest>
